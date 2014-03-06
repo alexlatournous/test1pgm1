@@ -14,9 +14,12 @@
 
 @implementation ViewController
 
+int color = 0;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _myLabel.textColor = [UIColor greenColor];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +29,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)swap:(id)sender {
+    if (color==0){
+        _myLabel.textColor = [UIColor redColor];
+        color = 1;
+    }
+    else if (color==1){
+        _myLabel.textColor = [UIColor greenColor];
+        color = 0;
+    }
+}
 @end
